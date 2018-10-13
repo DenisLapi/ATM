@@ -17,10 +17,10 @@ void authenticate_user(struct User *client) {
 	FILE *card_file;
 
 	printf("Enter your card number: ");
-	scanf("%s", &card_number);
+	scanf("%s", card_number);
 
 	printf("Enter pin code: ");
-	scanf("%s", &pin_input);
+	scanf("%s", pin_input);
 
 	card_file = check_card_validity(card_number);
 	if(card_file == NULL) {

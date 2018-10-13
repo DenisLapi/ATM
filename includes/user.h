@@ -18,6 +18,4 @@ struct User {
 	int authenticated;
 };
 
-void authenticate_user(struct User *client);
-
 #endif // USER_H_FILE

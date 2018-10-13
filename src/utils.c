@@ -6,7 +6,7 @@
 
 void show_menu(struct User *client) {
 	int menu_option;
-	
+
 	printf("\n\n|--------------- MENU ---------------|\n1) Balance \n2) Withdraw \n3) Money transfer\n4) CLOSE");
 	printf("\nEnter the option number: ");
 
@@ -25,8 +25,8 @@ void show_menu(struct User *client) {
 		case 4:
 			exit(0);
 			break;
-		default: 
+		default:
 			show_menu(client);
-			break;	
+			break;
 	}
 }

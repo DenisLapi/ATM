@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include "./../includes/card.h"
 
 FILE *check_card_validity(char *card_number) {
