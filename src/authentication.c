@@ -47,8 +47,6 @@ void authenticate_user(struct User *client) {
  		client->authenticated = 1;
  		printf("\nSucessfully logged in!");
 
-		printf("%s\n%s\n%s\n%s\n%d", client->first_name, client->last_name, client->card_number, client->pin_code, client->balance);
-
  	} else {
  		printf("\nYou credentials are not correct!");
  	}
