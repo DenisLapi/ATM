@@ -19,7 +19,6 @@ FILE *check_card_validity(char *card_number) {
 
 void update_card_data(char *card_number, struct User *client) {
 
-	int balance;
 	FILE *card_file;
 
 	card_file = check_card_validity(card_number);
@@ -28,13 +27,11 @@ void update_card_data(char *card_number, struct User *client) {
 		return;
 	}
 
-	rewind(card_file);
-
 	fprintf(card_file, "%s\n", client->first_name);
 	fprintf(card_file, "%s\n", client->last_name);
 	fprintf(card_file, "%s\n", client->card_number);
 	fprintf(card_file, "%s\n", client->pin_code);
-	fprintf(card_file, "%d\n", client->balance);
+	fprintf(card_file, "%d", client->balance);
 
 	fclose(card_file);
 }

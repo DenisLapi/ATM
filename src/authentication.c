@@ -34,7 +34,9 @@ void authenticate_user(struct User *client) {
  	fscanf(card_file, "%s", card_number);
  	fscanf(card_file, "%s", pin_code);
  	fscanf(card_file, "%d", &balance);
- 	fclose(card_file);
+ 	if(fclose(card_file) != 0) {
+		printf("\n File can't be closed");
+	}
 
  	if(strcmp(pin_input, pin_code) == 0) {
 
