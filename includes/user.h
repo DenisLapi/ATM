@@ -14,7 +14,7 @@ struct User {
 	char last_name[MAX_SIZE_LAST_NAME];
 	char card_number[MAX_SIZE_CARD_NUMBER];
 	char pin_code[MAX_SIZE_PIN_CODE];
-	double balance;
+	int balance;
 	int authenticated;
 };
 

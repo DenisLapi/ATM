@@ -6,7 +6,6 @@
 
 void show_menu(struct User *client) {
 	int menu_option;
-
 	printf("\n\n|--------------- MENU ---------------|\n1) Balance \n2) Withdraw \n3) Money transfer\n4) CLOSE");
 	printf("\nEnter the option number: ");
 
@@ -14,11 +13,15 @@ void show_menu(struct User *client) {
 
 	switch(menu_option) {
 		case 1:
-			printf("\nBalance: %lf", get_balance(client));
+			printf("\nBalance: %d", get_balance(client));
 			break;
-		case 2:
-			// Todo - Withdraw
+		case 2: {
+			int amount;
+			printf("\nEnter amount: ");
+			scanf("%d", &amount);
+			withdraw_money(client, amount);
 			break;
+		}
 		case 3:
 			// Todo - Money transfer
 			break;
