@@ -55,15 +55,20 @@ void transfer_money(struct User *client, struct User *receiver) {
 	// Check card where user wants to send money exists. If not stop the action and show the message
 	card_file = check_card_validity(card_number);
 	if(card_file == NULL) {
+
 		printf("\nCard number is not correct");
 		return;
+
 	} else {
 		// Read date from file so we can use it later to update it wiwht new data (Balance value)
+		rewind(card_file);
+
 		fscanf(card_file, "%s", receiver->first_name);
 		fscanf(card_file, "%s", receiver->last_name);
 		fscanf(card_file, "%s", receiver->card_number);
 		fscanf(card_file, "%s", receiver->pin_code);
 		fscanf(card_file, "%d", &receiver->balance);
+
 		// Reduce the balance to client and increase to receiver
 		client->balance -= amount;
 		receiver->balance += amount;
@@ -71,6 +76,8 @@ void transfer_money(struct User *client, struct User *receiver) {
 		// Update the client and received DB files
 		update_card_data(client->card_number, client);
 		update_card_data(receiver->card_number, receiver);
+
+		printf("\n[Info] $%d successfully transferred to card number: %s", amount, receiver->card_number);
 
 	}
 

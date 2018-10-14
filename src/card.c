@@ -23,8 +23,10 @@ void update_card_data(char *card_number, struct User *client) {
 
 	card_file = check_card_validity(card_number);
 	if(card_file == NULL) {
+
 		printf("\nCard number is not correct");
 		return;
+		
 	}
 
 	fprintf(card_file, "%s\n", client->first_name);
